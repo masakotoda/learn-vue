@@ -4,8 +4,14 @@ var app = new Vue({
         todo: null,
         message: 'Hello Vueeeee!',
         todos: [
-            'Item 1',
-            'Item 2'
+            {
+                content: 'Item 1',
+                finished: false
+            },
+            {
+                content: 'Item 2',
+                finished: false
+            }
         ]
     },
     methods: {
@@ -15,9 +21,13 @@ var app = new Vue({
                 return;
             }
 
-            console.log(todo);
-            this.todos.push(todo);
+            console.log('adding ' + todo.content);
+            this.todos.push({ content: todo, finished: false });
             this.todo = null;
+        },
+        remove(todo) {
+            console.log('removing ' + todo.content);
+            this.todos = this.todos.filter(item => item !== todo);
         }
     },
     computed: {
