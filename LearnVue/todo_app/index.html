@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        
+    <!--jquery-->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <link href="src/app.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/vue"></script>
+
+    <title>Todo Application</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Todo Application
+                        </div>
+                        <form class="card-block m-0"
+                              @submit.prevent="add(todo)">
+                            <div class="input-group">
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="Add todo"
+                                       v-model="todo"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary"
+                                            type="submit"
+                                            :disabled="!todoIsValid"
+                                            >
+                                        Add
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"
+                                v-for="todo in todos">
+                                {{ todo }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
