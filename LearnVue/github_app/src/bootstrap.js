@@ -21,4 +21,16 @@ export const myrouter = new VueRouter({
   routes: myroutes
 });
 
+import VueMaterial from 'vue-material';
+
+Vue.use(VueMaterial);
+
+// Copied from http://vuematerial.io/#/themes/configuration
+Vue.material.registerTheme('default', {
+  primary: 'blue',
+  accent: 'red',
+  warn: 'red',
+  background: 'grey'
+});
+
 import './assets/sass/app.scss';
