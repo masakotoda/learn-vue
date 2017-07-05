@@ -19,7 +19,7 @@
 
     methods: {
       fetchUser(username) {
-        this.$http.get(`https://api.github.com/users/${username}`)
+        this.$http.get(`users/${username}`)
         .then((res) => { this.user = res.data; });
       }
     },
