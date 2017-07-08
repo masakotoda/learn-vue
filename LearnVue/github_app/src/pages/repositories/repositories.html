@@ -1,26 +1,26 @@
 ﻿<div>
-  <md-table>
+  <md-table @sort="sortRepos">
     <md-table-header>
       <md-table-row>
-        <md-table-head>
+        <md-table-head md-sort-by="name">
           Name
         </md-table-head>
         <md-table-head>
           Description
         </md-table-head>
-        <md-table-head>
+        <md-table-head md-sort-by="stargazers_count">
           Number of Stars
         </md-table-head>
-        <md-table-head>
+        <md-table-head md-sort-by="language">
           Language
         </md-table-head>
-        <md-table-head>
+        <md-table-head md-sort-by="size">
           Size
         </md-table-head>
       </md-table-row>
     </md-table-header>
     <md-table-body>
-      <md-table-row v-for="repo in $root.repos">
+      <md-table-row v-for="repo in repos">
         <md-table-cell>
           <a :href="repo.html_url" target="_blank">
             {{ repo.name }}
@@ -37,6 +37,11 @@
         </md-table-cell>
         <md-table-cell>
           {{ repo.size }} kB
+        </md-table-cell>
+      </md-table-row>
+      <md-table-row v-if="repos && repos.length === 0">
+        <md-table-cell colspan="5">
+          No repositories found...
         </md-table-cell>
       </md-table-row>
     </md-table-body>
