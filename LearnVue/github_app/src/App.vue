@@ -1,7 +1,8 @@
 ﻿<template>
   <div>
     <md-toolbar class="md-medium">
-      <md-button class="md-icon-button">
+      <md-button class="md-icon-button"
+                 @click.native="toggleSideNav">
         <md-icon>menu</md-icon>
       </md-button>
 
@@ -12,9 +13,20 @@
       </md-input-container>
     </md-toolbar>
 
-    <md-lauout>
+    <md-sidenav class="md-left"
+                ref="sidenav">
+      <md-toolbar class="md-medium">
+        <md-button class="md-icon-button"
+                   @click.native="toggleSideNav">
+          <md-icon>menu</md-icon>
+        </md-button>
+        <h2 class="md-title">GitHub</h2>
+      </md-toolbar>
+    </md-sidenav>
+
+    <md-layout>
       <router-view></router-view>
-    </md-lauout>
+    </md-layout>
   </div>
 </template>
 
@@ -34,6 +46,9 @@
       fetchUser(username) {
         this.$http.get(`users/${username}`)
         .then((res) => { this.user = res.data; });
+      },
+      toggleSideNav() {
+        this.$refs.sidenav.toggle();
       }
     },
 
