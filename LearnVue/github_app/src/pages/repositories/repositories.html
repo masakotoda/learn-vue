@@ -1,7 +1,45 @@
 ﻿<div>
-  Repositories Page
-  <br/>
-  <router-link :to="{name: 'route_user'}">
-    To user page
+  <md-table>
+    <md-table-header>
+      <md-table-row>
+        <md-table-head>
+          Name
+        </md-table-head>
+        <md-table-head>
+          Description
+        </md-table-head>
+        <md-table-head>
+          Number of Stars
+        </md-table-head>
+        <md-table-head>
+          Language
+        </md-table-head>
+        <md-table-head>
+          Size
+        </md-table-head>
+      </md-table-row>
+    </md-table-header>
+    <md-table-body>
+      <md-table-row v-for="repo in $root.repos">
+        <md-table-cell>
+          <a :href="repo.html_url" target="_blank">
+            {{ repo.name }}
+          </a>
+        </md-table-cell>
+        <md-table-cell>
+          {{ repo.description }}
+        </md-table-cell>
+        <md-table-cell>
+          {{ repo.stargazers_count }}
+        </md-table-cell>
+        <md-table-cell>
+          {{ repo.language }}
+        </md-table-cell>
+        <md-table-cell>
+          {{ repo.size }} kB
+        </md-table-cell>
+      </md-table-row>
+    </md-table-body>
+  </md-table>
   </router-link>
 </div>
