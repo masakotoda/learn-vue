@@ -17,5 +17,9 @@
           return 0;
       });
     }
+  },
+
+  mounted() {
+    this.$root.closeSideNav();
   }
 };

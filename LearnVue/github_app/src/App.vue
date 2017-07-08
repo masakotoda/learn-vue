@@ -86,6 +86,9 @@
       toggleSideNav() {
         this.$refs.sidenav.toggle();
       },
+      closeSideNav() {
+        this.$refs.sidenav.close();
+      },
       setUsername: _.debounce(function(username) {
         if (username)
         {
