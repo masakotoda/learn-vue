@@ -8,3 +8,4 @@ npm install --save-dev sass-loader node-sass
 npm run dev
 
 npm install --save material-design-icons
+npm install --save lodash

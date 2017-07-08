@@ -9,7 +9,9 @@
       <h2 class="md-title">GitHub</h2>
 
       <md-input-container style="flex: 1">
-        <md-input placeholder="Search username"></md-input>
+        <md-input placeholder="Search username"
+                  v-model="username">
+        </md-input>
       </md-input-container>
     </md-toolbar>
 
@@ -31,7 +33,9 @@
 </template>
 
 <script>
+  import _ from 'lodash';
   import { myrouter } from './bootstrap';
+
   export default {
     name: 'GitHubApplication',
     router: myrouter,
@@ -39,7 +43,14 @@
     data() {
       return {
         user: null,
+        username: null,
       };
+    },
+
+    watch: {
+      username(value) {
+        this.setUsername(value);
+      },
     },
 
     methods: {
@@ -49,7 +60,10 @@
       },
       toggleSideNav() {
         this.$refs.sidenav.toggle();
-      }
+      },
+      setUsername: _.debounce(function(username) {
+        console.log(username);
+      }, 500)
     },
 
     mounted() {
