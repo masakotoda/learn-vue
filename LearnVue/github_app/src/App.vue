@@ -42,7 +42,9 @@
 
     data() {
       return {
+        myrepos: null,
         user: null,
+        repos: null,
         username: null,
       };
     },
@@ -58,11 +60,29 @@
         this.$http.get(`users/${username}`)
         .then((res) => { this.user = res.data; });
       },
+      fetchRepos(username) {
+        this.$http.get(`users/${username}/repos`)
+        .then((res) => { this.repos = res.data; });
+      },
+      fetchMyRepos() {
+        this.$http.defaults.headers.common.Authorization = "Basic " + btoa("myname:mypassword");
+        this.$http.get('user/repos')
+        .then((res) => { this.myrepos = res.data; });
+      },
       toggleSideNav() {
         this.$refs.sidenav.toggle();
       },
       setUsername: _.debounce(function(username) {
-        console.log(username);
+        if (username)
+        {
+            this.fetchUser(username);
+            this.fetchRepos(username);
+        }
+        else
+        {
+            this.user = null;
+            this.repos = null;
+        }
       }, 500)
     },
 
