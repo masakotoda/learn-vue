@@ -58,16 +58,16 @@
     methods: {
       fetchUser(username) {
         this.$http.get(`users/${username}`)
-        .then((res) => { this.user = res.data; });
+        .then(({ data }) => { this.user = data; });
       },
       fetchRepos(username) {
         this.$http.get(`users/${username}/repos`)
-        .then((res) => { this.repos = res.data; });
+        .then(({ data }) => { this.repos = data; });
       },
       fetchMyRepos() {
         this.$http.defaults.headers.common.Authorization = "Basic " + btoa("myname:mypassword");
         this.$http.get('user/repos')
-        .then((res) => { this.myrepos = res.data; });
+        .then(({ data }) => { this.myrepos = data; });
       },
       toggleSideNav() {
         this.$refs.sidenav.toggle();
