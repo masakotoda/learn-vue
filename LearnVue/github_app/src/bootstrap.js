@@ -30,7 +30,7 @@ Vue.material.registerTheme('default', {
   primary: 'blue',
   accent: 'red',
   warn: 'red',
-  background: 'grey'
+  background: 'yellow'
 });
 
 import './assets/sass/app.scss';

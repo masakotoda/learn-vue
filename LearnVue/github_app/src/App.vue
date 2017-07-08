@@ -24,6 +24,20 @@
         </md-button>
         <h2 class="md-title">GitHub</h2>
       </md-toolbar>
+      <md-list>
+        <md-list-item>
+          <router-link :to="{ name: 'route_repositories' }">
+            Repositories
+          </router-link>
+        </md-list-item>
+      </md-list>
+      <md-list>
+        <md-list-item>
+          <router-link :to="{ name: 'route_user' }">
+            User
+          </router-link>
+        </md-list-item>
+      </md-list>
     </md-sidenav>
 
     <md-layout>
@@ -75,13 +89,13 @@
       setUsername: _.debounce(function(username) {
         if (username)
         {
-            this.fetchUser(username);
-            this.fetchRepos(username);
+          this.fetchUser(username);
+          this.fetchRepos(username);
         }
         else
         {
-            this.user = null;
-            this.repos = null;
+          this.user = null;
+          this.repos = null;
         }
       }, 500)
     },
