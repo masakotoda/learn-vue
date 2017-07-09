@@ -1,4 +1,6 @@
-﻿export default {
+﻿import MyUserCard from './../../components/user-card/user-card.vue';
+
+export default {
 
   computed: {
     user() {
@@ -8,5 +10,9 @@
 
   mounted() {
     this.$root.closeSideNav();
+  },
+
+  components: {
+    MyUserCard
   }
 };
