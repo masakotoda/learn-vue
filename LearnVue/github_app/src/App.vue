@@ -101,10 +101,6 @@
           this.repos = null;
         }
       }, 500)
-    },
-
-    mounted() {
-      this.fetchUser('masakotoda');
     }
   }
 </script>
