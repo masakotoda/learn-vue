@@ -1,0 +1,16 @@
+vue init webpack client
+  - Install vue-router? - No
+  - Use ESLint to lint your code? - Yes
+  - Pick an ESLint preset? - Airbnb (Use num key)
+  - Setup unit tests with Karma + Mocha? - No
+  - Setup e2e tests with Nightwatch? - No
+
+cd client
+npm install
+
+cd ..
+mkdir server
+cd server
+npm init
+  - Author - Masako Toda <todamasako0421@hotmail.com>
+  - License - MIT
