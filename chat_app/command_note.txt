@@ -25,3 +25,4 @@ cd ..
 cd client
 npm install --save vue-router vuex vuex-router-sync socket.io-client
 npm install --save-dev node-sass sass-loader
+npm run dev
