@@ -20,3 +20,8 @@ npm install --save express socket.io
 npm src/main.js
 or
 npm run start
+
+cd ..
+cd client
+npm install --save vue-router vuex vuex-router-sync socket.io-client
+npm install --save-dev node-sass sass-loader
