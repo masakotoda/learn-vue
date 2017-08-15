@@ -14,3 +14,5 @@ cd server
 npm init
   - Author - Masako Toda <todamasako0421@hotmail.com>
   - License - MIT
+
+npm install --save express socket.io

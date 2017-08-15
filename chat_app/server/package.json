@@ -5,7 +5,10 @@
   "author": "Masako Toda <todamasako0421@hotmail.com>",
   "private": true,
   "main": "index.js",
-  "scripts": {
-  },
-  "license": "MIT"
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  }
 }
