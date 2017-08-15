@@ -16,3 +16,7 @@ npm init
   - License - MIT
 
 npm install --save express socket.io
+
+npm src/main.js
+or
+npm run start

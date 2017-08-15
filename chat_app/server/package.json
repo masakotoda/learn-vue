@@ -5,7 +5,9 @@
   "author": "Masako Toda <todamasako0421@hotmail.com>",
   "private": true,
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node src/main.js"
+  },
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4",
